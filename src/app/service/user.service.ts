@@ -13,7 +13,7 @@ export class UserService {
 
   constructor( private http: HttpClient) {}
 
-  public getUsers(): Observable<DefUser[] | HttpErrorResponse> {
+  public getUsers(): Observable<DefUser[]> {
     return this.http.get<DefUser[]>(`${this.host}/user/list`);
   }
 
@@ -37,24 +37,16 @@ export class UserService {
     localStorage.setItem('users', JSON.stringify(users));
   }
 
-  public getUsersFromLocalCache(): DefUser[] {
-    const usersJson = localStorage.getItem('users');
-    if (usersJson) {
-      try {
-        const users = JSON.parse(usersJson) as DefUser[];
-        if (Array.isArray(users)) {
-          return users;
-        }
-      } catch (e) {
-        console.error('Error parsing stored users: ', e);
-      }
+  public getUsersFromLocalCache() : DefUser[] {
+    if (localStorage.getItem('users')){
+    return JSON.parse(localStorage.getItem('users')) ;
     }
-    return [];
+  return null ;
   }
 
   public createUserFormData(loggedInUsername: string, user: DefUser): FormData {
     const formData = new FormData();
-    formData.append('currentUsername', loggedInUsername);
+    formData.append('currentUser', loggedInUsername);
     formData.append('username', user.username);
     formData.append('email', user.email);
     formData.append('password', user.password);

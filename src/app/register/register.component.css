@@ -1,0 +1,106 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #1f6b8f;
+}
+
+.user_card {
+    height: 400px;
+    width: 440px;
+    margin: auto;
+    background: #276465;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    padding-right: 26px;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0a,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0,0,0a,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+.user_card h3 {
+    color: #deebeb;
+    font-family: 'arial';
+    padding-right: -20px;
+    padding-left: 15px;
+}
+
+.brand_logo_container {
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    top: -75px;
+    border-radius: 50%;
+    background: #60a3bc;
+    padding: 10px;
+    text-align: center;
+}
+
+.brand_logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.form_container {
+    margin-top: 100px;
+}
+
+.form-control {
+    background-color: #dddddd;
+}
+
+.logic_btn {
+    background-color: #008693;
+}
+
+.logic_btn span {
+    color: #9ebec6;
+}
+
+.register_btn {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #028ead;
+    color: white;
+    padding-right: -20px;
+}
+
+.register_btn:focus {
+    box-shadow: none;
+    outline: 0px;
+}
+
+.register_container {
+    padding: 0 2rem;
+}
+
+.input-group-text {
+    background: #276465;
+    color: #00b9e1;
+    border: 0;
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.input_user,
+.input_pass:focus {
+    box-shadow: none;
+    outline: 0px;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #1b4f72;
+}
+
+.links > span {
+    color: #948c8e;
+}

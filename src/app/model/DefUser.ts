@@ -30,18 +30,18 @@ export class DefUser {
     public authorities: string[];
 
   constructor() {
-    this.user_id = 0;
-    this.client_id = 0;
-    this.agency_id = 0;
-    this.username = '';
-    this.email = '';
-    this.password = '';
-    this.isActive = false;
-    this.isNotLocked = false;
-    this.lastLoginDate = new Date;
-    this.lastLoginDateDisplay = new Date;
-    this.joinDate = new Date;
-    this.role = '';
-    this.authorities = [];
+    this.user_id;
+    this.client_id;
+    this.agency_id;
+    this.username;
+    this.email;
+    this.password;
+    this.isActive;
+    this.isNotLocked;
+    this.lastLoginDate;
+    this.lastLoginDateDisplay;
+    this.joinDate;
+    this.role;
+    this.authorities;
   }
 }

@@ -1,1 +1,47 @@
-<p>login works!</p>
+<div class="container" style="margin-top: 100px;">
+    <div class="d-flex justify-content-center h-50">
+        <div class="user_card">
+                <div class="d-flex justify-content-center">
+                    <div style="margin-top: 24px;margin-bottom: -90px;">
+                        <h3>Login Portal</h3>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center form_container">
+                    <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm.value)">
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" name="username" placeholder="Username"
+                                ngModel #usernameInput = "ngModel" required>
+                            </div>
+                            <span class="help-block" style="color: #03aed4d2; margin-top: -10px;" *ngIf="usernameInput.invalid &&
+                            usernameInput.touched">Enter your username</span>
+                            <div class="input-group mb-2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input type="password" class="form-control" name="password" placeholder="Password"
+                                ngModel #passwordInput = "ngModel" required>
+                            </div>
+                            <span class="help-block" style="margin-top: -10px; color: #03aed4d2;" *ngIf="passwordInput.invalid &&
+                            passwordInput.touched">Enter your password</span>
+                        <div class="d-flex justify-content-center mt-3 login_container">
+                            <button type="submit" [disabled]="loginForm.invalid || showLoading" name="button"
+                            class="btn logic_btn d-flex justify-content-center align-items-center">
+                                <i *ngIf="showLoading" class="fas fa-spinner fa-spin"></i>&nbsp;
+                                <span *ngIf="showLoading" style="color: #f2f5f5;">Loading...</span>
+                                <span *ngIf="!showLoading" style="color: #f2f5f5;">Login</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="mt-4">
+                    <div class="d-flex justify-content-center links">
+                    <span style="color: #babdbd;">Don't have an account ?</span>
+                    <a routerLink="/register" class="ml-2" style="color: #deebeb;">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

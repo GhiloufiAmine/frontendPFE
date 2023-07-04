@@ -14,14 +14,12 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
-  public login(user: DefUser): Observable<HttpResponse<any> | HttpErrorResponse> {
-    return this.http.post<HttpResponse<any> | HttpErrorResponse>
-    (`${this.host}/user/login`, user, {observe: 'response'});
+  public login(user: DefUser): Observable<HttpResponse<DefUser>> {
+    return this.http.post<DefUser> (`${this.host}/user/login`, user, { observe: 'response' });
   }
 
-  public register(user: DefUser): Observable<DefUser | HttpErrorResponse> {
-    return this.http.post<DefUser | HttpErrorResponse>
-    (`${this.host}/user/register`, user);
+  public register(user: DefUser): Observable<DefUser> {
+    return this.http.post<DefUser>(`${this.host}/user/register`, user);
   }
 
   public logOut(): void {
